@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 1. Mapeie as classes do Tailwind para variáveis CSS limpas */
+@theme {
+  --color-forest-green: #4a7c59;
+  --color-warm-cream: #faf6f0;
+  --color-warm-amber: #705c30;
+  --color-vault-text: #4b5563; /* Nova cor dinâmica de texto */
+  --color-vault-text-bold: #364153; /* Nova cor dinâmica de texto forte */
+  --color-vault-card: #ffffff; /* Nova cor clara dinâmica de card */
+
+  --font-literata: "Literata", serif;
+  --font-nunito: "Nunito Sans", sans-serif;
+
+  --radius-xl: 12px;
+}
+
+/* 3. Substituições automáticas para o Dark Mode */
+.dark {
+  --color-forest-green: #29b151;
+  --color-warm-cream: #2c2b29;
+  --color-warm-amber: #87613b;
+  --color-vault-text: #f3f3f3; /* Nova cor dinâmica de texto */
+  --color-vault-text-bold: #ffffff; /* Nova cor dinâmica de texto forte */
+  --color-vault-card: #4c4c4c; /* Nova cor dinâmica de card */
+}
+
+@layer base {
+  body {
+    @apply bg-warm-cream text-gray-800 font-nunito antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-literata font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest-green text-white px-6 py-3 rounded-xl font-bold transition-all hover:bg-forest-green/90 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-xl font-bold transition-all hover:bg-gray-50 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full p-4 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-forest-green/20 focus:border-forest-green transition-all;
+  }
+
+  .card-terra {
+    @apply bg-white p-6 rounded-xl border border-gray-100 dark:border-emerald-500 shadow-sm hover:shadow-md transition-shadow;
+  }
+}

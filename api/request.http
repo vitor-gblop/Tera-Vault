@@ -1,0 +1,78 @@
+# Requests of extension REST Client - vs code
+
+# Users ------------------------------------------------------
+POST http://localhost:3000/users/add  HTTP/1.1
+content-type: application/json
+
+{
+    "name": "vitor",
+    "email": "vitor.gblop@gmail.com"
+}
+###
+GET http://localhost:3000/users/get  HTTP/1.1
+content-type: application/json
+
+###
+GET http://localhost:3000/users/get/id/1  HTTP/1.1
+content-type: application/json
+
+### Keys ------------------------------------------------------
+POST http://localhost:3000/keys/add  HTTP/1.1
+content-type: application/json
+
+{
+    "title": "C6",
+    "password": "180405",
+    "description": "Banco C6",
+    "userId": 1
+}
+###
+
+POST http://localhost:3000/keys/add  HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Google",
+    "password": "gameEndlles252",
+    "description": "",
+    "userId": 1
+}
+
+###
+GET http://localhost:3000/keys/get/1  HTTP/1.1
+content-type: application/json
+
+###
+GET http://localhost:3000/keys/get/id/2  HTTP/1.1
+content-type: application/json
+
+
+### Login ------------------------------------------------------
+POST http://localhost:3000/login  HTTP/1.1
+content-type: application/json
+
+{
+    "email": "vitor.gblop@gmail.com"
+}
+
+### verification ------------------------------------------------------
+POST http://localhost:3000/login/verify  HTTP/1.1
+content-type: application/json
+
+{
+    "email": "vitor.gblop@gmail.com", 
+    "code": "824248"
+}
+
+
+###  Historic ------------------------------------------------------
+POST http://localhost:3000/history/add  HTTP/1.1
+content-type: application/json
+
+{
+    "keyId": 2
+}
+
+### 
+GET http://localhost:3000/history/get/2  HTTP/1.1
+content-type: application/json
