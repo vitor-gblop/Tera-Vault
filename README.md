@@ -1,6 +1,6 @@
 # Terra Vault
 
-Um sistema completo de gerenciamento de cofres de segredo, composto por duas aplicações:
+Um sistema de gerenciamento de senhas secretas, composto por duas aplicações:
 
 - **`app/`**: front-end React focado em experiência mobile e interface terrosa.
 - **`api/`**: back-end Node/Express para autenticação, armazenamento e segurança.
