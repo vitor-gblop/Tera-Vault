@@ -119,4 +119,12 @@ Este repositório reúne duas aplicações integradas: a interface do cofre e a 
 
 
 ## Imagens
+### Login
+<img width="581" height="514" alt="Captura de tela de 2026-07-22 10-29-40" src="https://github.com/user-attachments/assets/669dadd8-43cc-4a7c-98c8-c39277ecdb6e" />
+
+### Inicio
+<img width="581" height="514" alt="Captura de tela de 2026-07-22 10-27-54" src="https://github.com/user-attachments/assets/328bf529-0747-4d9f-86ad-2ee3560e6684" />
+
+### Mobile
+<img width="291" height="517" alt="Captura de tela de 2026-07-22 10-30-52" src="https://github.com/user-attachments/assets/5f97ff7a-7f06-4195-a56e-357cae83d41f" />
 
