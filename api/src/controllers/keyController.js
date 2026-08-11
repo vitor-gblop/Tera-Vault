@@ -109,6 +109,48 @@ class KeyController {
     }
   }
 
+  static async edit(req = request, res = response) {
+    try {
+      const title = req.body.title;
+      const description = req.body.description;
+      const password = req.body.password;
+
+      const secure = verifySecurityLevel(password);
+
+      // @ts-ignore
+      const key = await Keys.findByPk(req.params.id);
+
+      if (!key) {
+        return res
+          .status(HttpStatusCode.NotFound)
+          .json({message: "Key not found"});
+      }
+
+      const keyPayload = {
+        // @ts-ignore - erro de propriedade id
+        id: key.id,
+        // @ts-ignore - erro de propriedade title
+        title: title,
+        // @ts-ignore - erro de propriedade description
+        description: description,
+        // @ts-ignore - erro de propriedade password
+        password: password,
+        // @ts-ignore - erro de propriedade secure
+        secure: secure, // nova segurança
+        // @ts-ignore - erro de propriedade historics
+        historic: key.historics,
+      };
+
+      res.json(keyPayload);
+      //
+    } catch (error) {
+      console.log(error);
+      res
+        .status(HttpStatusCode.InternalServerError)
+        .json({error: "Error fetching key"});
+    }
+  }
+
   /**
    * Remove a register of secret key
    * @param {*} req

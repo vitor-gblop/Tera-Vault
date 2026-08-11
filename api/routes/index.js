@@ -8,7 +8,7 @@ import users from "./users.js";
 import secureRoute from "../src/services/secureRoute.js";
 
 // Rotas
-router.use("/users", secureRoute, users);
+router.use("/users", users);
 router.use("/keys", secureRoute, keys);
 router.use("/login", login);
 router.use("/history", secureRoute, historic);

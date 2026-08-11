@@ -1,4 +1,4 @@
-import { DataTypes, Model } from "sequelize";
+import {DataTypes, Model} from "sequelize";
 import Keys from "./keys.js";
 
 class Historic extends Model {
