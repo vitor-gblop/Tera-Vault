@@ -29,6 +29,8 @@ O front-end é construído em React com TypeScript e Tailwind CSS, e oferece:
 - componentes reutilizáveis para botões, cards, modais e navegação;
 - gerenciamento de autenticação local via hooks e serviços.
 
+[Readme do Front-end](./app/README.md)
+
 ### Back-end (`api/`)
 
 A API é desenvolvida em Node.js com Express e inclui:
@@ -38,6 +40,8 @@ A API é desenvolvida em Node.js com Express e inclui:
 - serviços especializados para **criptografia**, **envio de e-mail** e **segurança de rota**;
 - persistência de dados via banco local/servidor (configuração no back-end);
 - lógica de verificação para garantir que apenas usuários autorizados acessem informações sensíveis.
+
+[Readme do Back-end](./api/README.md)
 
 ---
 

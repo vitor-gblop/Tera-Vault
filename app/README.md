@@ -1,91 +1,104 @@
 # Terra Vault
 
-A secure, organic-themed mobile vault application for managing secret keys. Rooted in privacy, Terra Vault provides a grounded and approachable experience for safeguarding your most sensitive digital credentials.
+Um aplicativo móvel seguro, com tema orgânico, para gerenciar chaves secretas. Fundamentado na privacidade, o Terra Vault oferece uma experiência acolhedora e acessível para proteger suas credenciais digitais mais sensíveis.
 
-## 🌿 Aesthetic: "Rooted Warmth"
+## 🌿 Estética: “Aconchego Natural”
 
-Terra Vault uses earthy tones, soft shapes, and natural textures to create a sense of security and calm.
+O Terra Vault utiliza tons terrosos, formas suaves e texturas naturais para transmitir segurança e tranquilidade.
 
-- **Primary Color:** Forest Green (`#4a7c59`)
-- **Background:** Warm Cream (`#faf6f0`)
-- **Tertiary:** Warm Amber (`#705c30`)
-- **Typography:** Literata (Headlines) and Nunito Sans (Body)
-
----
-
-## 🔐 Authentication & Verification
-
-Terra Vault prioritizes security through a seamless, passwordless authentication flow.
-
-### 1. Email Login
-Entry is initiated by providing a valid email address. No passwords are stored on the client-side to minimize the attack surface.
-
-### 2. Secure Code Verification
-After submitting your email, a **6-digit secure verification code** is sent to your inbox. 
-- The code is time-sensitive and valid for a single session.
-- Access is only granted upon successful input of this code on the **Verification Page**.
-- This method ensures that only the owner of the email account can access the vault (Magic Link style).
-
-### 3. Additional Security
-- **Biometric Unlock:** Can be enabled in Settings for quick local access.
-- **Two-Factor Authentication (2FA):** Optional secondary layer for high-security environments.
+- **Cor primária:** Verde Floresta (`#4a7c59`)
+- **Fundo:** Creme Suave (`#faf6f0`)
+- **Cor terciária:** Âmbar Quente (`#705c30`)
+- **Tipografia:** Literata (títulos) e Nunito Sans (corpo do texto)
 
 ---
 
-## 🚀 How to Run
+## 🔐 Autenticação e Verificação
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v20 or higher recommended)
+O Terra Vault prioriza a segurança por meio de um fluxo de autenticação contínuo e sem senha.
+
+### 1. Login por E-mail
+
+O acesso começa com o fornecimento de um endereço de e-mail válido. Nenhuma senha é armazenada no dispositivo para reduzir a superfície de ataque.
+
+### 2. Verificação por Código Seguro
+
+Após enviar seu e-mail, um **código de verificação seguro de 6 dígitos** será enviado para sua caixa de entrada.
+
+- O código é válido por tempo limitado e para uma única sessão.
+- O acesso só será concedido após a inserção correta do código na **Página de Verificação**.
+- Esse método garante que apenas o proprietário da conta de e-mail possa acessar o cofre, seguindo um modelo semelhante ao Magic Link.
+
+### 3. Segurança Adicional
+
+- **Desbloqueio biométrico:** Pode ser ativado nas configurações para acesso local rápido.
+- **Autenticação de dois fatores (2FA):** Camada secundária opcional para ambientes de alta segurança.
+
+---
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) (versão 20 ou superior recomendada)
 - [npm](https://www.npmjs.com/)
 
-### Installation
-1. Clone the repository.
-2. Navigate to the project directory:
+### Instalação
+
+1. Clone o repositório.
+2. Acesse o diretório do projeto:
+
    ```bash
    cd secret-keys-manager/app
    ```
-3. Install dependencies:
+
+3. Instale as dependências:
+
    ```bash
    npm install
    ```
 
-### Execution
-Start the development server:
+### Execução
+
+Inicie o servidor de desenvolvimento:
+
 ```bash
 npm run dev
 ```
-The application will be available at `http://localhost:5173` (or the port specified by Vite).
+
+O aplicativo estará disponível em `http://localhost:5173` (ou a porta especificada por Vite).
 
 ---
 
-## 🔗 Connection Elements
+## 🔗 Elementos de Conexão
 
-The application connects to a backend service for data persistence and authentication.
+O aplicativo conecta-se a um serviço backend para persistência de dados e autenticação.
 
-- **API Base URL:** Configured in `src/config/enviroment.ts`.
-- **Default Development URL:** `http://localhost:3000`
-- **HTTP Client:** Built on [Axios](https://axios-http.com/), with a custom wrapper in `src/config/http.ts`.
+- **URL da API:** Configurado em `src/config/enviroment.ts`.
+- **URL de Desenvolvimento Padrão:** `http://localhost:3000`.
+- **Cliente HTTP:** Construído sobre [Axios](https://axios-http.com/), com um wrapper personalizado em `src/config/http.ts`.
 
-Ensure your backend server is running and accessible at the configured URL for the following features to work:
-- User authentication and login code generation.
-- Vault data retrieval and persistence.
-- Key management (add, delete, audit logs).
+Garanta que seu servidor backend esteja rodando e acessível na URL configurada para que as seguintes funcionalidades funcionem:
 
----
-
-## 📂 How to Access
-
-1. **Initial Login:** Open the app and enter your email address on the Login screen.
-2. **Verify Code:** Check your email, retrieve the 6-digit code, and enter it on the Verification screen.
-3. **Vault Dashboard:** Once verified, you will be redirected to your Vault, where you can:
-   - View summary cards for **Active Keys** and **Vault Health**.
-   - Manage your list of secrets.
-   - Use the **Floating Action Button (+)** to plant new secrets.
-4. **Settings:** Use the bottom navigation bar to access personalization options, including dark mode and security controls.
+- Autenticação e geração de código de login.
+- Recuperação e persistência de dados do cofre.
+- Gestão de chaves (adicionar, excluir, logs de auditoria).
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Como Acessar
+
+1. **Login Inicial:** Abra o app e entre com seu e-mail no screen de Login.
+2. **Verificação de Código:** Verifique seu e-mail, recupere o código de 6 dígitos e entre com ele na tela de Verificação.
+3. **Dashboard do Cofre:** Uma vez verificado, você será redirecionado para o seu Cofre, onde poderá:
+   - Verificar cards de resumo para **Chaves Ativas** e **Saúde do Cofre**.
+   - Gerenciar sua lista de segredos.
+   - Usar o **Botão de Ação Flutuante (+)** para plantar novos segredos.
+4. **Configurações:** Use a barra de navegação inferior para acessar opções de personalização, incluindo modo escuro e controles de segurança.
+
+---
+
+## 🛠️ Stack Tecnológica
 
 - **Framework:** React 19 (TypeScript)
 - **Styling:** Tailwind CSS v4
