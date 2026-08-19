@@ -1,4 +1,4 @@
-import { HttpStatusCode } from "axios";
+import {HttpStatusCode} from "axios";
 import Historic from "../models/historic.js";
 
 const codebox = new Map();
@@ -12,13 +12,13 @@ class HistoricController {
    * @returns novo registro ao historico de uma chave - add new register to the historic of a key
    */
   async add(req, res) {
-    const { keyId } = req.body;
+    const {keyId} = req.body;
 
     // prettier-ignore
     try {
       const now = new Date();
       const history = await Historic.create({
-        date: now.toDateString().split("T")[0],
+        date: now.toISOString().slice(0, 10),
         time: now.toTimeString().split(" ")[0],
         keyId: keyId
       });
@@ -41,11 +41,11 @@ class HistoricController {
    * @returns informação do usuario criptografada em base 64 - encrypted user data in base 64 -
    */
   async get(req, res) {
-    const { id } = req.params;
+    const {id} = req.params;
 
     // prettier-ignore
     try {
-      const history = await Historic.findAll({ where: { KeyId: id } });
+      const history = await Historic.findAll({ where: { keyId: id } });
       return res.json(history);
     } 
     catch (error) {

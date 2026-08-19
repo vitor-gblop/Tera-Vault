@@ -10,6 +10,7 @@
   --color-vault-text: #4b5563; /* Nova cor dinâmica de texto */
   --color-vault-text-bold: #364153; /* Nova cor dinâmica de texto forte */
   --color-vault-card: #ffffff; /* Nova cor clara dinâmica de card */
+  --color-vault-navbar: #ffffff; /* Nova cor clara dinâmica de navbar */
 
   --font-literata: "Literata", serif;
   --font-nunito: "Nunito Sans", sans-serif;
@@ -25,6 +26,7 @@
   --color-vault-text: #f3f3f3; /* Nova cor dinâmica de texto */
   --color-vault-text-bold: #ffffff; /* Nova cor dinâmica de texto forte */
   --color-vault-card: #4c4c4c; /* Nova cor dinâmica de card */
+  --color-vault-navbar: #4c4c4c; /* Nova cor clara dinâmica de navbar */
 }
 
 @layer base {

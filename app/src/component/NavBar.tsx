@@ -24,7 +24,7 @@ function NavBar() {
 
   return (
     <header className="fixed bottom-6 left-0 right-0 z-50 px-4 md:relative md:bottom-auto md:top-0 md:mb-8">
-      <nav className="max-w-md mx-auto bg-white/80 backdrop-blur-md border border-gray-100 rounded-2xl p-2 flex justify-around items-center shadow-lg md:shadow-none md:bg-transparent md:border-none md:justify-end md:gap-8">
+      <nav className="max-w-md mx-auto bg-vault-navbar backdrop-blur-md border border-gray-100 rounded-2xl p-2 flex justify-around items-center shadow-lg md:shadow-none md:bg-transparent md:border-none md:justify-end md:gap-8">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
           return (

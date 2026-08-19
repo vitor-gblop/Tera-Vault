@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import toast from "react-hot-toast";
-import { HiPlus, HiShieldCheck } from "react-icons/hi";
-import { Link, Navigate } from "react-router-dom";
+import {HiPlus, HiShieldCheck} from "react-icons/hi";
+import {Link, Navigate} from "react-router-dom";
 import Card from "../../component/Card";
 import MainTitle from "../../component/MainTitle";
 import NavBar from "../../component/NavBar";
 import _routes from "../../config/routes";
 import useAuth from "../../hooks/UseAuth";
-import type { Key } from "../../interfaces/key";
+import type {Key} from "../../interfaces/key";
 import KeysService from "../../services/KeysService";
 import useThemes from "../../services/ThemeMode";
 
 function SecretKeys() {
+  const _useAuth = useAuth();
+  const data = _useAuth.authData();
   const [keys, setKeys] = useState<Key[]>([]);
-  const data = useAuth().authData();
   const theme = useThemes();
 
   useEffect(() => {
@@ -21,6 +22,7 @@ function SecretKeys() {
       // Garantia de integridade
       if (!data.id) {
         Navigate({to: "/"});
+        _useAuth.deauthenticate();
       }
 
       // prettier-ignore
@@ -92,7 +94,8 @@ function SecretKeys() {
         {/* Floating Action Button */}
         <Link
           to={_routes.key_add}
-          className="fixed bottom-24 right-6 w-14 h-14 bg-forest-green text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform md:bottom-12 md:right-12"
+          className="fixed bottom-30 right-6 w-14 h-14 bg-forest-green text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform  
+            md:bottom-15 md:right-12"
         >
           <HiPlus size={32} />
         </Link>

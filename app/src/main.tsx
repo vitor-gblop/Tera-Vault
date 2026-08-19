@@ -1,6 +1,6 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {StrictMode} from "react";
+import {createRoot} from "react-dom/client";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import _routes from "./config/routes";
 import "./index.css";
 import AddKeyForm from "./pages/keys/AddKeyPage";
@@ -8,7 +8,8 @@ import DetailKeyPage from "./pages/keys/DetailKeyPage";
 import SecretKeys from "./pages/keys/Keys";
 import Login from "./pages/login/Login";
 import Settings from "./pages/Settings";
-import { Toaster } from "react-hot-toast";
+import {Toaster} from "react-hot-toast";
+import Register from "./pages/login/Register";
 // importar Users de "./pages/Users";
 
 createRoot(document.getElementById("root")!).render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")!).render(
         {/* <Route path={_routes.users} element={<Users />} /> */}
         <Route path={_routes.settings} element={<Settings />} />
         <Route path={_routes.nf} element={<Login />} />
+        <Route path={_routes.register} element={<Register />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

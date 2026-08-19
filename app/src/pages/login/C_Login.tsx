@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
+import { FaSignInAlt } from "react-icons/fa";
 import MainTitle from "../../component/MainTitle";
 import LoginService from "../../services/LoginService";
 
@@ -66,9 +66,14 @@ function C_Login({next, defineEmail}: {next: any; defineEmail: any}) {
         </div>
 
         <button className="btn-secondary w-full">
+          <FaSignInAlt size={20} />
+          <a href="/register">Sign Up</a>
+        </button>
+
+        {/* <button className="btn-secondary w-full">
           <FcGoogle size={20} />
           <span>Continue with Google</span>
-        </button>
+        </button> */}
       </div>
     </div>
   );

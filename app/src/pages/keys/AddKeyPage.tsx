@@ -3,15 +3,20 @@ import {HiChevronLeft} from "react-icons/hi";
 import {useNavigate} from "react-router-dom";
 import MainTitle from "../../component/MainTitle";
 import NavBar from "../../component/NavBar";
-import KeysService from "../../services/KeysService";
 import type {Key} from "../../interfaces/key";
+import KeysService from "../../services/KeysService";
+import useAuth from "../../hooks/UseAuth";
 
 function AddKeyForm() {
+  // Informaçãi do token do usuário autenticado
+  const _useAuth = useAuth();
+  const data = _useAuth.authData();
+
   const [formData, setFormData] = useState<Key>({
     title: "",
     password: "",
     description: "",
-    secure: ""
+    secure: "",
   });
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -29,8 +34,13 @@ function AddKeyForm() {
     setIsLoading(true);
     setMessage("");
 
+    if (!data.id) {
+      navigate("/");
+      _useAuth.deauthenticate();
+    }
+
     try {
-      const response = await KeysService().add(formData, 1);
+      const response = await KeysService().add(formData, data.id!);
       if (response) {
         setMessage("Secret key planted successfully.");
         setTimeout(() => navigate(-1), 1500);

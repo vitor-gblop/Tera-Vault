@@ -4,6 +4,7 @@ const _routes = {
     key_details: "/key/details/",
     users: "/users",
     login: "/login",
+    register: "/register",
     verify: "/verify",
     settings: "/settings",
     nf: "*",
